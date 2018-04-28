@@ -1,6 +1,4 @@
-import java.util.scanner;
-
-
+import java.util.Scanner;
 
 class TestClass {
     public static void main(String args[] ) throws Exception {
@@ -10,16 +8,15 @@ class TestClass {
     int remainder = 0;
     int[] digits = new int[10];
     while(num>0){
-        remainder = num/10;
+        remainder = num % 10;
         digits[remainder]++;
         num = num/10;
     }
     
     for (int counter = 0; counter<10;counter ++){
         int digitCount = digits[counter];
-		
-			System.out.println(counter + "\t" + digitCount);
-		}
+	System.out.println(counter + " " + digitCount);
     }
+    
     }
 }
