@@ -1,24 +1,31 @@
 import java.util.*;
 
-public class NQueens {
- public static void main(String[] args) {
+public class NQueens 
+{
+ public static void main(String[] args) 
+ {
   Scanner in = new Scanner(System.in);
   int num = in.nextInt();
   queenpos(num);
  }
  
- private static void queenpos(int N){
-   
-if(N < 4){ 
+ private static void queenpos(int N)
+ {
+   if(N < 4)
+   { 
    System.out.println("No Solution");
-  }else{
+   }
+  else
+  {
    int[][] board = new int[N][N]; 
    placeAllQueens(board, 0);
    printBoard(board);
   }
  }
  private static boolean placeAllQueens(int board[][], int row){
-  if(row>=board.length){
+  //TO prevent from going out of bounds
+  if(row>=board.length)
+  {
    return true;
   }
  
@@ -40,27 +47,31 @@ if(N < 4){
  
  private static boolean isSafe(int board[][], int row, int col){
  
+  //Check in same Column
+  for (int i = row-1; i >= 0; i--) 
+  {
+   if(board[i][col] == 1)
+   {
+    return false;
+   }
+  }
   //Check Left Upper Diagonal
-  for (int i = row-1, j = col-1; i >= 0 && j >= 0; i--, j--) {
-   if(board[i][j] == 1){
+  for (int i = row-1, j = col-1; i >= 0 && j >= 0; i--, j--)
+  {
+   if(board[i][j] == 1)
+   {
     return false;
    }
   }
  
   //Check Right Upper Diagonal
-  for (int i = row-1, j = col+1; i >= 0 && j < board.length; i--, j++) {
-   if(board[i][j] == 1){
+  for (int i = row-1, j = col+1; i >= 0 && j < board.length; i--, j++)
+  {
+   if(board[i][j] == 1)
+   {
     return false;
    }
   }
- 
-  //Check in same Column
-  for (int i = row-1; i >= 0; i--) {
-   if(board[i][col] == 1){
-    return false;
-   }
-  }
- 
   return true;
  }
  
