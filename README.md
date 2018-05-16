@@ -1,2 +1,2 @@
 # codemonk
-Solving of Code Monk Exercise In Java And C++
+Solving of Code Monk Exercise In Java
